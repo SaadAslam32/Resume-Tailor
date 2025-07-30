@@ -14,17 +14,19 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    
+
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email: email,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: `${baseUrl}/auth/callback`,
         },
       });
 
       if (error) throw error;
-      
+
       toast.success('Magic link sent! Check your email', {
         position: "top-center",
         autoClose: 5000,
@@ -32,8 +34,7 @@ export default function Login() {
         closeOnClick: true,
         pauseOnHover: true,
       });
-      
-      // Show success message but don't redirect immediately
+
     } catch (err) {
       toast.error(`Error: ${err.message}`, {
         position: "top-center",
@@ -50,12 +51,12 @@ export default function Login() {
           <h1 className="text-3xl font-bold text-indigo-700 mb-2">ResumeTailor.ai</h1>
           <p className="text-gray-600">AI-powered resume optimization</p>
         </div>
-        
+
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Welcome Back</h2>
           <p className="text-gray-600">Enter your email to sign in</p>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -74,13 +75,13 @@ export default function Login() {
               disabled={loading}
             />
           </div>
-          
+
           <button
             type="submit"
             disabled={loading}
             className={`w-full py-3 px-4 rounded-lg text-white font-medium transition ${
-              loading 
-                ? 'bg-gray-400 cursor-not-allowed' 
+              loading
+                ? 'bg-gray-400 cursor-not-allowed'
                 : 'bg-indigo-600 hover:bg-indigo-700'
             }`}
           >
@@ -97,7 +98,7 @@ export default function Login() {
             )}
           </button>
         </form>
-        
+
         <div className="mt-8 text-center text-sm text-gray-600">
           <p>Don't have an account? You'll be automatically registered</p>
           <p className="mt-4">
