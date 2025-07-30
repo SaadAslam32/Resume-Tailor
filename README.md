@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Resume Tailor - AI-Powered Resume Optimization
 
-## Getting Started
 
-First, run the development server:
+Resume Tailor is a cutting-edge web application that uses AI to optimize your resume for specific job descriptions. Upload your resume, provide a job description, and get a tailored resume that matches the job requirements in seconds!
 
-```bash
+Features
+AI-Powered Optimization: Leverages OpenAI's GPT models to tailor your resume
+
+PDF Parsing: Extracts text from uploaded PDF resumes
+
+Secure Authentication: User authentication via Supabase
+
+History Tracking: Saves all your tailored resumes for future reference
+
+PDF Download: Download your tailored resume as a PDF
+
+Responsive Design: Works seamlessly on desktop and mobile devices
+
+Technologies Used
+Frontend: Next.js (React), Tailwind CSS
+
+Backend: Next.js API Routes
+
+Database: MongoDB (via Mongoose)
+
+Authentication: Supabase
+
+AI Integration: OpenRouter API
+
+PDF Processing: pdf2json
+
+PDF Generation: jsPDF
+
+Getting Started
+Prerequisites
+Node.js v18 or higher
+
+MongoDB Atlas account or local MongoDB instance
+
+Supabase account
+
+OpenRouter API key
+
+Installation
+Clone the repository:
+
+bash
+git clone https://github.com/your-username/resume-tailor.git
+cd resume-tailor
+Install dependencies:
+
+bash
+npm install
+Create a .env.local file in the root directory and add your environment variables:
+
+env
+MONGODB_URI=your_mongodb_connection_string
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+Run the development server:
+
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configuration
+MongoDB Setup
+Create a free MongoDB Atlas cluster at https://www.mongodb.com/atlas
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Get your connection string and add it to .env.local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Supabase Setup
+Create a Supabase project at https://supabase.io
 
-## Learn More
+Enable email authentication
 
-To learn more about Next.js, take a look at the following resources:
+Add your Supabase URL and anon key to .env.local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+OpenRouter Setup
+Create an account at https://openrouter.ai
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Generate an API key
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add it to .env.local
