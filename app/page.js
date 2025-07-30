@@ -26,7 +26,7 @@ export default function Home() {
           href="/auth/login" 
           className="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-indigo-700 transition"
         >
-          Get Started - It's Free
+          Get Started - It&apos;s Free
         </Link>
       </section>
 
