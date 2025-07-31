@@ -1,3 +1,4 @@
+
 'use client';
 import { jsPDF } from 'jspdf';
 import { FiDownload } from 'react-icons/fi';
@@ -56,19 +57,19 @@ export default function ResumePreview({ content }) {
   };
 
   return (
-    <div className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-100 transition-all hover:shadow-xl">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-2xl font-bold text-indigo-700">
+    <div className="mt-8 bg-[var(--bg-secondary)] rounded-xl shadow-lg p-6 border border-[var(--border-primary)] transition-all hover:shadow-xl">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
+        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
           Your Tailored Resume
         </h3>
         
         <button
           onClick={downloadPDF}
           disabled={isDownloading}
-          className={`flex items-center px-5 py-3 rounded-lg font-medium transition ${
+          className={`flex items-center px-5 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-0.5 ${
             isDownloading
               ? 'bg-gray-300 text-gray-500'
-              : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 shadow-md'
+              : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg'
           }`}
         >
           {isDownloading ? (
@@ -87,14 +88,14 @@ export default function ResumePreview({ content }) {
         </button>
       </div>
       
-      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-6 mb-4 max-h-[500px] overflow-y-auto shadow-inner">
-        <pre className="whitespace-pre-wrap font-sans text-gray-800 text-base leading-relaxed">
+      <div className="bg-gradient-to-br from-indigo-50/50 to-purple-100/50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-[var(--border-primary)] rounded-xl p-6 mb-4 max-h-[500px] overflow-y-auto shadow-inner">
+        <pre className="whitespace-pre-wrap font-sans text-[var(--text-primary)] text-base leading-relaxed">
           {content}
         </pre>
       </div>
       
-      <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-        <p className="text-yellow-700 flex items-start">
+      <div className="mt-6 p-4 bg-gradient-to-r from-yellow-50/50 to-amber-50/50 dark:from-yellow-900/20 dark:to-amber-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+        <p className="text-yellow-700 dark:text-yellow-300 flex items-start">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
           </svg>
