@@ -25,7 +25,7 @@ export default function Home() {
               className="relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-bold rounded-full group bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 ease-out"
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent"></span>
-              <span className="relative">Get Started - It's Free</span>
+             <span className="relative">Get Started - It&apos;s Free</span>
               <svg className="ml-2 w-5 h-5 transition-all duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>

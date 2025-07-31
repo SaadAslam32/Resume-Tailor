@@ -125,7 +125,7 @@ export default function Login() {
           </form>
 
           <div className="mt-8 text-center text-sm text-[var(--text-secondary)]">
-            <p>Don't have an account? You'll be automatically registered</p>
+           <p>{"Don't have an account? You'll be automatically registered"}</p>
             <p className="mt-4">
               <Link href="/" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition">
                 <FiArrowLeft className="mr-1" /> Back to home
